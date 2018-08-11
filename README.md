@@ -2,7 +2,7 @@
 
 Simple stars rating component for Angular >= 2
 
-[Demo can be found here]()
+[Demo can be found here](https://hughjdavey.github.io/hughjdavey.github.io/ngx-stars)
 
 ### Installation
 
@@ -11,13 +11,13 @@ Simple stars rating component for Angular >= 2
 
 ``` typescript
 ...
-import { NgxStarsComponent } from 'ngx-stars';
+import { NgxStarsModule } from 'ngx-stars';
 
 @NgModule({
   ...
   imports: [
     ...
-    NgxStarsComponent
+    NgxStarsModule
   ],
   ...
 })
