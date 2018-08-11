@@ -2,7 +2,7 @@
 
 Simple stars rating component for Angular >= 2
 
-[Demo can be found here](https://hughjdavey.github.io/hughjdavey.github.io/ngx-stars)
+[Demo can be found here](https://hughjdavey.github.io/ngx-stars)
 
 ### Installation
 
