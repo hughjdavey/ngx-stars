@@ -1,0 +1,20 @@
+i:not(.zero-star) {
+  color: #B42025;
+  margin-right: 0.5rem;
+}
+
+.stars-line {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.stars-line > div {
+  z-index: 999;
+}
+
+.zero-star {
+  color: transparent;
+  position: absolute;
+  left: -16px;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ngx-stars",
+  "version": "0.0.1",
+  "description": "Simple stars rating component for Angular >= 2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hughjdavey/ngx-stars.git"
+  },
+  "homepage": "https://github.com/hughjdavey/ngx-stars#readme",
+  "bugs": "https://github.com/hughjdavey/ngx-stars/issues",
+  "keywords": [
+    "angular", "stars", "rating"
+  ],
+  "author": "hughjd",
+  "license": "Unlicense",
+  "peerDependencies": {
+    "@angular/common": ">=2.0.0 <7.0.0",
+    "@angular/core": ">=2.0.0 <7.0.0"
+  },
+  "scripts": {
+    "build": "ng build ngx-stars",
+    "postbuild": "node scripts/copy-artifacts.js"
+  }
+}
