@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (13/08/2018)
+
+* Fix error where wrong artifact published on npm
+
 ## 1.0.0 (13/08/2018)
 
 * Make padding between stars scale based on chosen size

@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   declarations: [
-    NgxStarsComponent]
-  ,
+    NgxStarsComponent
+  ],
   exports: [
     NgxStarsComponent
   ]
