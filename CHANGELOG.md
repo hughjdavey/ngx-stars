@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0 (13/08/2018)
+
+* Make padding between stars scale based on chosen size
+* Add customPadding @Input() so this can be overridden
+* Bump version to 1.0.0 to align with npm recommendations
+
 ## 0.0.3 (11/08/2018)
 
 * Update changelog and fix README demo URL

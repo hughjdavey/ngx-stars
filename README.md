@@ -34,6 +34,7 @@ import { NgxStarsModule } from 'ngx-stars';
 * `color` [string] - hexcode or colorname for star color (defaults to 'crimson')
 * `animation` [boolean] - whether to animate the stars until first user interaction (defaults to false)
 * `animationSpeed` [integer] - speed of animation in ms (defaults to 100)
+* `customPadding` [string] - custom `padding-right` between stars, e.g. '10px' (defaults to `0.$size`rem e.g. 0.2rem with size=2)
 
 ##### `@Output()` options:
 

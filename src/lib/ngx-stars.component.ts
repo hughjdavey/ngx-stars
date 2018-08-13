@@ -28,6 +28,9 @@ export class NgxStarsComponent implements OnInit {
   @Input()
   animationSpeed: number = 100;
 
+  @Input()
+  customPadding: string;
+
   @Output()
   ratingOutput: EventEmitter<number> = new EventEmitter();
 
@@ -45,8 +48,21 @@ export class NgxStarsComponent implements OnInit {
     }
   }
 
-  starColor(): Object {
+  starColorAndPadding(): Object {
+    return Object.assign({}, this.starColor(), this.starPadding());
+  }
+
+  private starColor(): Object {
     return { color: this.color || 'crimson' };
+  }
+
+  private starPadding(): Object {
+    let padding = '0.5rem';
+    if (Number.isInteger(this.size) || this.size > 0 || this.size < 6) {
+      padding = `0.${this.size}rem`;
+    }
+
+    return { 'margin-right': this.customPadding || padding };
   }
 
   starSize(): string {
