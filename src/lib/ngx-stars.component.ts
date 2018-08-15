@@ -105,21 +105,14 @@ export class NgxStarsComponent implements OnInit {
     clickedStar.classname = clickedInFirstHalf ? 'fa-star-half-o' : 'fa-star';
 
     // fill in all stars in previous positions and clear all in later ones
-    this.editableStars
-      .forEach(star => {
-        if (star.position > clickedStar.position) {
-          star.classname = 'fa-star-o';
-        }
-        else if (star.position < clickedStar.position) {
-          star.classname = 'fa-star';
-        }
-      });
-  }
-
-  // hidden star to left of first star lets user click there to set to 0
-  onZeroStar(): void {
-    this.setRating(0);
-    this.ratingOutput.emit(this.rating);
+    this.editableStars.forEach(star => {
+      if (star.position > clickedStar.position) {
+        star.classname = 'fa-star-o';
+      }
+      else if (star.position < clickedStar.position) {
+        star.classname = 'fa-star';
+      }
+    });
   }
 
   onStarClick(event: MouseEvent, clickedStar: EditableStar): void {
@@ -132,6 +125,17 @@ export class NgxStarsComponent implements OnInit {
     const clickedInFirstHalf = event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
     this.rating = clickedStar.position + (clickedInFirstHalf ? 0.5 : 1);
     this.ratingOutput.emit(this.rating);
+  }
+
+  // hidden star to left of first star lets user click there to set to 0
+  onZeroStarClick(): void {
+    this.setRating(0);
+    this.ratingOutput.emit(this.rating);
+  }
+
+  onZeroStarHover(): void {
+    // clear all stars
+    this.editableStars.forEach(star => star.classname = 'fa-star-o');
   }
 
   onStarsUnhover() {
