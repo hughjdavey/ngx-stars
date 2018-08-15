@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 (15/08/2018)
+
+* Fix error where wrong artifact published on npm
+
 ## 1.0.2 (15/08/2018)
 
 * Add ability to see zero stars filled while hovering

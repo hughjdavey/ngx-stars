@@ -1,6 +1,6 @@
 {
   "name": "ngx-stars",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple stars rating component for Angular >= 2",
   "repository": {
     "type": "git",
