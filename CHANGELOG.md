@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 (04/09/2018)
+
+* Add rounding of initialStars to nearest .5
+
 ## 1.0.3 (15/08/2018)
 
 * Fix error where wrong artifact published on npm

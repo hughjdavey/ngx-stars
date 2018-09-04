@@ -91,7 +91,7 @@ export class NgxStarsComponent implements OnInit {
   }
 
   setRating(rating: number) {
-    this.rating = rating;
+    this.rating = Math.round(rating * 2) / 2;
     this.onStarsUnhover();
   }
 
