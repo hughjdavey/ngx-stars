@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (21/12/2018)
+
+* Add support for Angular 7 and up
+* Some code cleaning
+
 ## 1.1.0 (04/09/2018)
 
 * Add rounding of initialStars to nearest .5

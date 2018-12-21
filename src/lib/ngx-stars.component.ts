@@ -118,8 +118,6 @@ export class NgxStarsComponent implements OnInit {
   onStarClick(event: MouseEvent, clickedStar: EditableStar): void {
     this.cancelStarAnimation();
 
-    console.warn('clicked');
-
     // lock in current rating
     const starIcon = event.target as HTMLElement;
     const clickedInFirstHalf = event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
