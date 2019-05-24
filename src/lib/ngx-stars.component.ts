@@ -31,6 +31,9 @@ export class NgxStarsComponent implements OnInit {
   @Input()
   customPadding: string;
 
+  @Input()
+  wholeStars: boolean = false;
+
   @Output()
   ratingOutput: EventEmitter<number> = new EventEmitter();
 
@@ -98,11 +101,10 @@ export class NgxStarsComponent implements OnInit {
   onStarHover(event: MouseEvent, clickedStar: EditableStar): void {
     this.cancelStarAnimation();
 
-    const starIcon = event.target as HTMLElement;
-    const clickedInFirstHalf = event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
+    const clickedInFirstHalf = this.clickedInFirstHalf(event);
 
     // fill in either a half or whole star depending on where user clicked
-    clickedStar.classname = clickedInFirstHalf ? 'fa-star-half-o' : 'fa-star';
+    clickedStar.classname = (!this.wholeStars && clickedInFirstHalf) ? 'fa-star-half-o' : 'fa-star';
 
     // fill in all stars in previous positions and clear all in later ones
     this.editableStars.forEach(star => {
@@ -119,9 +121,8 @@ export class NgxStarsComponent implements OnInit {
     this.cancelStarAnimation();
 
     // lock in current rating
-    const starIcon = event.target as HTMLElement;
-    const clickedInFirstHalf = event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
-    this.rating = clickedStar.position + (clickedInFirstHalf ? 0.5 : 1);
+    const clickedInFirstHalf = this.clickedInFirstHalf(event);
+    this.rating = clickedStar.position + ((!this.wholeStars && clickedInFirstHalf) ? 0.5 : 1);
     this.ratingOutput.emit(this.rating);
   }
 
@@ -150,6 +151,11 @@ export class NgxStarsComponent implements OnInit {
         star.classname = 'fa-star-o';
       }
     });
+  }
+
+  private clickedInFirstHalf(event: MouseEvent): boolean {
+    const starIcon = event.target as HTMLElement;
+    return event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
   }
 
   noop(): void {}

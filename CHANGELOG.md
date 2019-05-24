@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 (24/05/2019)
+
+* Add new `wholeStars` option to allow selecting only whole numbers of stars
+
 ## 1.2.0 (21/12/2018)
 
 * Add support for Angular 7 and up
