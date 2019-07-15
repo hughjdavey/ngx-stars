@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <div class="stars-line" (mouseleave)="readonly ? noop() : onStarsUnhover()">
-  <i [ngClass]="['fa fa-star ' + starSize()]" class="zero-star" aria-hidden="true" (click)="onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></i>
-  <div *ngFor="let star of editableStars;" (click)="readonly ? noop() : onStarClick($event, star)" (mousemove)="readonly ? noop() : onStarHover($event, star)">
-    <i [ngClass]="['fa ' + starSize(), star.classname]" [ngStyle]="starColorAndPadding()" aria-hidden="true"></i>
+  <span class="star zero-star" [ngStyle]="starSize()" aria-hidden="true" (click)="onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></span>
+  <div *ngFor="let star of editableStars;" [ngStyle]="starPadding()" (click)="readonly ? noop() : onStarClick($event, star)" (mousemove)="readonly ? noop() : onStarHover($event, star)">
+    <span class="star" [ngClass]="star.classname" [ngStyle]="starColorAndSize()" aria-hidden="true"></span>
   </div>
 </div>

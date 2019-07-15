@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.3 (15/07/2019)
+
+* Add new `customStarIcons` option to allow using other icons
+* Remove Font Awesome 4 dependency
+* Change default star icons to Font Awesome 5 icons
+* Add support for Angular 8 and up
+
 ## 1.3.0 (24/05/2019)
 
 * Add new `wholeStars` option to allow selecting only whole numbers of stars
