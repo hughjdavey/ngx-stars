@@ -36,6 +36,30 @@ import { NgxStarsModule } from 'ngx-stars';
 * `animationSpeed` [integer] - speed of animation in ms (defaults to 100)
 * `customPadding` [string] - custom `padding-right` between stars, e.g. '10px' (defaults to `0.$size`rem e.g. 0.2rem with size=2)
 * `wholeStars` [boolean] - if this is true only whole star numbers are able to be selected (defaults to false)
+* `customStarIcons` [object of form `{ empty: string, half: string, full: string }`] - [CSS URLs](https://developer.mozilla.org/en-US/docs/Web/CSS/url) to alternative image files to use instead of the default stars
+  
+###### How to use `customStarIcons`
+
+If you want to use the default (Font Awesome 5) star icons, there's no need to use this param, but if you want to use other icons do the following:
+
+* Find 3 SVG files that you want to use, one for 'empty', one for 'half' and one for 'full'
+* Include the files in a part of your application that will be accessible when running, e.g. the `src/assets` folder
+* Alternatively the images can be hosted elsewhere on the internet
+* For each file you will need its CSS [url()](https://developer.mozilla.org/en-US/docs/Web/CSS/url)
+* Create an object that contains all 3 urls and adheres to the `{ empty: string, half: string, full: string }` format
+* Pass the object into the `ngx-stars` instance. The example below assumes `src/assets` contains `heart-empty.svg`, `heart-half.svg` and `heart-full.svg`
+
+```
+// src/app/app.component.ts
+heartIcons = {
+    empty: '../assets/heart-empty.svg',
+    half: '../assets/heart-half.svg',
+    full: '../assets/heart-full.svg',
+}
+
+// src/app/app.component.html
+<ngx-stars [readonly]="false" [size]="4" [initialStars]="2.5" [customStarIcons]="heartIcons"></ngx-stars>
+```
 
 ##### `@Output()` options:
 
