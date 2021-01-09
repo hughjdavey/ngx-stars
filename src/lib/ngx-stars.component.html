@@ -1,6 +1,9 @@
 <div class="stars-line" (mouseleave)="readonly ? noop() : onStarsUnhover()">
-  <span class="star zero-star" [ngStyle]="starSize()" aria-hidden="true" (click)="onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></span>
-  <div *ngFor="let star of editableStars;" [ngStyle]="starPadding()" (click)="readonly ? noop() : onStarClick($event, star)" (mousemove)="readonly ? noop() : onStarHover($event, star)">
+  <span class="star zero-star" [ngStyle]="starSize()" aria-hidden="true" (hover)="onStarsUnhover()"
+    (click)="onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></span>
+  <div *ngFor="let star of editableStars;" [ngStyle]="starPadding()"
+    (click)="readonly ? noop() : onStarClick($event, star)" (click)="readonly ? noop() : onStarClick($event, star)"
+    (mousemove)="readonly ? noop() : onStarHover($event, star)">
     <span class="star" [ngClass]="star.classname" [ngStyle]="starColorAndSize()" aria-hidden="true"></span>
   </div>
 </div>
