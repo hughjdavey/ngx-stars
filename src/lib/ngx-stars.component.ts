@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 @Component({
   selector: 'ngx-stars',
   templateUrl: './ngx-stars.component.html',
-  styleUrls: [ './ngx-stars.component.css' ],
+  styleUrls: ['./ngx-stars.component.css'],
 })
 export class NgxStarsComponent implements OnInit, OnDestroy {
 
@@ -39,6 +39,10 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
 
   @Output()
   ratingOutput: EventEmitter<number> = new EventEmitter();
+
+
+  @Output()
+  hoverOutput: EventEmitter<number> = new EventEmitter();
 
   rating: number;
   editableStars: EditableStar[];
@@ -151,6 +155,10 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
         star.classname = this.getStarClass('full');
       }
     });
+
+
+    let hoveredVal = clickedStar.position + ((!this.wholeStars && clickedInFirstHalf) ? 0.5 : 1);
+    this.hoverOutput.emit(hoveredVal);
   }
 
   onStarClick(event: MouseEvent, clickedStar: EditableStar): void {
@@ -173,6 +181,7 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
     this.editableStars.forEach(star => star.classname = this.getStarClass('empty'));
   }
 
+
   onStarsUnhover() {
     // when user stops hovering we want to make stars reflect the last rating applied by clicking
     this.editableStars.forEach(star => {
@@ -194,7 +203,7 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
     return event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
   }
 
-  noop(): void {}
+  noop(): void { }
 
   private getStarClass(starType: StarType) {
     if (this.customCssClasses) {
