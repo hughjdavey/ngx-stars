@@ -202,6 +202,11 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
     }
     return `star-${starType}`;
   }
+
+  // this and the aria-labels and role in the html inspired by https://stackoverflow.com/q/55966205
+  getAriaLabel(): string {
+    return `Rating: ${this.rating} out of ${this.maxStars} stars ${this.readonly ? '' : '. Can be edited.'}`;
+  }
 }
 
 export type StarType = 'empty' | 'half' | 'full';

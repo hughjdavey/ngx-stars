@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 (28/04/2021)
+
+* Improve accessibility of component with aria and role attributes
+* Improve documentation in `README.md` and add table of contents
+* Remove maximum Angular version from `peerDependencies` in `package.json
+* Correct author name in `package.json`
+
 ## 1.4.3 (15/07/2019)
 
 * Add new `customStarIcons` option to allow using other icons
