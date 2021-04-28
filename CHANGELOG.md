@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.1 (28/04/2021)
+
+* Fix table of contents links in `README.md`
+* Disable ivy compiler in `tsconfig.lib.json` to [maintain library compatibility](https://v9.angular.io/guide/ivy#maintaining-library-compatibility)
+
 ## 1.5.0 (28/04/2021)
 
 * Improve accessibility of component with aria and role attributes

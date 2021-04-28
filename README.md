@@ -8,23 +8,23 @@ Simple stars rating component for Angular >= 2
 
 - [Installation](#installation)
 - [Usage](#usage)
-  + [`@Input()` options:](#--input----options-)
-  + [Changing star rating at runtime:](#changing-star-rating-at-runtime-)
-  + [How to use `customStarIcons`](#how-to-use--customstaricons-)
-  + [`@Output()` options:](#--output----options-)
-- [`Input()` Examples](#-input----examples)
-  + [readonly, 5 stars, none filled](#readonly--5-stars--none-filled)
-  + [readonly, 10 stars, none filled](#readonly--10-stars--none-filled)
-  + [readonly, 10 stars, 7.5 filled](#readonly--10-stars--75-filled)
-  + [readonly, custom size, custom color, custom padding](#readonly--custom-size--custom-color--custom-padding)
-  + [readonly, custom icons](#readonly--custom-icons)
-  + [editable, 5 stars, none filled](#editable--5-stars--none-filled)
-  + [editable, output function](#editable--output-function)
-  + [editable, animation, 100 animation speed](#editable--animation--100-animation-speed)
-  + [editable, animation, custom animation speed](#editable--animation--custom-animation-speed)
-  + [editable, whole stars only](#editable--whole-stars-only)
-- [Using `ngx-stars` from source](#using--ngx-stars--from-source)
-  + [Installing & running from source](#installing---running-from-source)
+  + [Inputs](#inputs)
+  + [Changing star rating at runtime](#changing-star-rating-at-runtime)
+  + [How to use custom icons](#how-to-use-custom-icons)
+  + [Outputs](#outputs)
+- [Examples](#examples)
+  + [readonly, 5 stars, none filled](#readonly-5-stars-none-filled)
+  + [readonly, 10 stars, none filled](#readonly-10-stars-none-filled)
+  + [readonly, 10 stars, 7.5 filled](#readonly-10-stars-75-filled)
+  + [readonly, custom size, custom color, custom padding](#readonly-custom-size-custom-color-custom-padding)
+  + [readonly, custom icons](#readonly-custom-icons)
+  + [editable, 5 stars, none filled](#editable-5-stars-none-filled)
+  + [editable, output function](#editable-output-function)
+  + [editable, animation, 100 animation speed](#editable-animation-100-animation-speed)
+  + [editable, animation, custom animation speed](#editable-animation-custom-animation-speed)
+  + [editable, whole stars only](#editable-whole-stars-only)
+- [Using ngx-stars from source](#using-ngx-stars-from-source)
+  + [Installing and running from source](#installing-and-running-from-source)
   + [Editing from source](#editing-from-source)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -50,7 +50,7 @@ import { NgxStarsModule } from 'ngx-stars';
 
 ### Usage
 
-##### `@Input()` options:
+##### Inputs
 
 * `maxStars` [integer] - number of stars (defaults to 5)
 * `initialStars` [float] - number of prefilled stars (defaults to 0) _see next section for how to change rating at runtime_
@@ -63,7 +63,7 @@ import { NgxStarsModule } from 'ngx-stars';
 * `wholeStars` [boolean] - if this is true only whole star numbers are able to be selected (defaults to false)
 * `customStarIcons` [object of form `{ empty: string, half: string, full: string }`] - [CSS URLs](https://developer.mozilla.org/en-US/docs/Web/CSS/url) to alternative image files to use instead of the default stars
 
-##### Changing star rating at runtime:
+##### Changing star rating at runtime
 
 The component has a `setRating(rating: number)` method you can use to update the stars rating at runtime.
 Simply get the component in your component using `@ViewChild`, then you can set and reset rating whenever you like:
@@ -80,8 +80,8 @@ export class MyComponent {
   this.starsComponent.setRating(0);
 }
 ```
-  
-##### How to use `customStarIcons`
+
+##### How to use custom icons
 
 If you want to use the default (Font Awesome 5) star icons, there's no need to use this param, but if you want to use other icons do the following:
 
@@ -104,7 +104,7 @@ heartIcons = {
 <ngx-stars [readonly]="false" [size]="4" [initialStars]="2.5" [customStarIcons]="heartIcons"></ngx-stars>
 ```
 
-##### `@Output()` options:
+##### Outputs
 
 * `ratingOutput` - provides the current rating as a float every time user changes it
 
@@ -126,7 +126,7 @@ export class MyComponent {
 }
 ```
 
-### `Input()` Examples
+### Examples
 
 ##### readonly, 5 stars, none filled
 ```html
@@ -200,14 +200,14 @@ export class MyComponent {
 <ngx-stars [wholeStars]="true"></ngx-stars>
 ```
 
-### Using `ngx-stars` from source
+### Using ngx-stars from source
 
 If you wish to develop locally and make changes to `ngx-stars`, you will need to use it from source
 rather than via `npm install`. Because the project is an Angular library it cannot run on its own and
 it will need to be wrapped within a normal Angular project. You could [create a new one](https://angular.io/cli/new)
 or use an existing one you have locally. Let us assume this 'wrapper' project is called `ngx-stars-testbed`.
 
-##### Installing & running from source
+##### Installing and running from source
 
 * Make a directory `/projects` at the top level of your project (same level as `src`)
 * Change to that `projects/` directory and add `ngx-stars` as a (git submodule)[https://git-scm.com/book/en/v2/Git-Tools-Submodules]
@@ -232,8 +232,8 @@ import { NgxStarsComponent } from '../../projects/ngx-stars/src/lib/ngx-stars.co
     AppComponent,
     NgxStarsComponent,
   ],
-...
-export class AppModule { }
+  ...
+  export class AppModule { }
 ```
 
 ##### Editing from source
