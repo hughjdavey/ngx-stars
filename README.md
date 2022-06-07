@@ -56,10 +56,11 @@ import { NgxStarsModule } from 'ngx-stars';
 * `initialStars` [float] - number of prefilled stars (defaults to 0) _see next section for how to change rating at runtime_
 * `readonly` [boolean] - whether to allow editing the number of filled stars (defaults to false)
 * `size` [integer 1-5] - relative size of stars (defaults to 1)
+* `customSize` [string] - custom size for stars, e.g. '4rem' or '48px' (overrides `size` if set)
 * `color` [string] - hexcode or colorname for star color (defaults to 'crimson')
 * `animation` [boolean] - whether to animate the stars until first user interaction (defaults to false)
 * `animationSpeed` [integer] - speed of animation in ms (defaults to 100)
-* `customPadding` [string] - custom `padding-right` between stars, e.g. '10px' (defaults to `0.$size`rem e.g. 0.2rem with size=2)
+* `customPadding` [string] - custom `padding-right` between stars, e.g. '10px'. if not set, padding defaults to a tenth of the star width
 * `wholeStars` [boolean] - if this is true only whole star numbers are able to be selected (defaults to false)
 * `customStarIcons` [object of form `{ empty: string, half: string, full: string }`] - [CSS URLs](https://developer.mozilla.org/en-US/docs/Web/CSS/url) to alternative image files to use instead of the default stars
 

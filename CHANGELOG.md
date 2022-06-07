@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.1 (07/06/2022)
+
+* Update README with info on `customSize` option
+
 ## 1.6.0 (07/06/2022)
 
 * Add new `customSize` option to allow specifying a custom star size
