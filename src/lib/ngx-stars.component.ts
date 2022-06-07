@@ -20,6 +20,9 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
   size: number;
 
   @Input()
+  customSize: string;
+
+  @Input()
   color: string;
 
   @Input()
@@ -91,7 +94,7 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
   }
 
   starPadding(): { [p: string]: string } {
-    return { 'margin-right': this.customPadding || `0.${this.safeSize()}rem` };
+    return { 'margin-right': this.customPadding || `calc(${this.starSize().width} / 10)` };
   }
 
   starColorAndSize(): { [p: string]: string } {
@@ -104,8 +107,8 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
 
   starSize(): { [p: string]: string } {
     return {
-      height: `${15 * this.safeSize()}px`,
-      width: `${16 * this.safeSize()}px`,
+      height: this.customSize || `${15 * this.safeSize()}px`,
+      width: this.customSize || `${16 * this.safeSize()}px`,
     };
   }
 

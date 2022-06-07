@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0 (07/06/2022)
+
+* Add new `customSize` option to allow specifying a custom star size
+
 ## 1.5.1 (28/04/2021)
 
 * Fix table of contents links in `README.md`
