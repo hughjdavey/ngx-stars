@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3 (09/06/2022)
+
+* Fix issue with importing library in external projects by publishing dist instead of src
+
 ## 1.6.2 (09/06/2022)
 
 * Update wrapper project to Angular 14, edit tsconfig, add prod tsconfig and rebuild
