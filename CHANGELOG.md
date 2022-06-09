@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.2 (09/06/2022)
+
+* Update wrapper project to Angular 14, edit tsconfig, add prod tsconfig and rebuild
+
 ## 1.6.1 (07/06/2022)
 
 * Update README with info on `customSize` option
