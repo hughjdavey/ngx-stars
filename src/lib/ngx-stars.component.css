@@ -11,13 +11,17 @@
 .zero-star {
   color: transparent;
   position: absolute;
-  left: -16px;
 }
 
 .star {
   display: inline-block;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+}
+
+.star-rtl {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 /* this icon is from font awesome 5 - https://fontawesome.com/icons/star?style=solid */

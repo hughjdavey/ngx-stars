@@ -62,7 +62,8 @@ import { NgxStarsModule } from 'ngx-stars';
 * `animationSpeed` [integer] - speed of animation in ms (defaults to 100)
 * `customPadding` [string] - custom `padding-right` between stars, e.g. '10px'. if not set, padding defaults to a tenth of the star width
 * `wholeStars` [boolean] - if this is true only whole star numbers are able to be selected (defaults to false)
-* `customStarIcons` [object of form `{ empty: string, half: string, full: string }`] - [CSS URLs](https://developer.mozilla.org/en-US/docs/Web/CSS/url) to alternative image files to use instead of the default stars
+* `customStarIcons` [object of form `{ empty: string, half: string, full: string }`] - [CSS URLs](https://developer.mozilla.org/en-US/docs/Web/CSS/url) to alternative image files to use instead of the default stars. the half-star image must be LTR even if the `rtl` option is being used - this is because the RTL logic flips the image horizontally so if an RTL image were provided it would get flipped back to LTR
+* `rtl` [boolean] - renders stars LTR if false and RTL if true (defaults to false) 
 
 ##### Changing star rating at runtime
 

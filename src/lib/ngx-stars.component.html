@@ -1,6 +1,6 @@
 <div class="stars-line" (mouseleave)="readonly ? noop() : onStarsUnhover()" role="img" [attr.aria-label]="getAriaLabel()">
-  <span class="star zero-star" [ngStyle]="starSize()" aria-hidden="true" (click)="readonly ? noop() : onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></span>
+  <span class="star zero-star" [ngStyle]="starSize()" [style.left]="zeroStarLeft()" aria-hidden="true" (click)="readonly ? noop() : onZeroStarClick()" (mousemove)="readonly ? noop() : onZeroStarHover()"></span>
   <div *ngFor="let star of editableStars;" [ngStyle]="starPadding()" aria-hidden="true" (click)="readonly ? noop() : onStarClick($event, star)" (mousemove)="readonly ? noop() : onStarHover($event, star)">
-    <span class="star" [ngClass]="star.classname" [ngStyle]="starColorAndSize()" aria-hidden="true"></span>
+    <span class="star" [class.star-rtl]="rtl" [ngClass]="star.classname" [ngStyle]="starColorAndSize()" aria-hidden="true"></span>
   </div>
 </div>

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.5 (15/06/2023)
+
+* Add RTL support
+
 ## 1.6.4 (11/11/2022)
 
 * Fix issue where `readonly` stars could still be set to 0 (courtesy of [@gonzalo-lorieto](https://github.com/gonzalo-lorieto))

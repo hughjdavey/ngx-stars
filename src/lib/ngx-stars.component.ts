@@ -40,6 +40,9 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
   @Input()
   customStarIcons: { empty: string, half: string, full: string };
 
+  @Input()
+  rtl: boolean = false;
+
   @Output()
   ratingOutput: EventEmitter<number> = new EventEmitter();
 
@@ -54,6 +57,9 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.setupStarImages();
     this.editableStars = Array.from(new Array(this.maxStars)).map((elem, index) => new EditableStar(index));
+    if (this.rtl) {
+      this.editableStars = this.editableStars.reverse();
+    }
     this.setRating(this.initialStars);
 
     if (this.animation) {
@@ -110,6 +116,14 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
       height: this.customSize || `${15 * this.safeSize()}px`,
       width: this.customSize || `${16 * this.safeSize()}px`,
     };
+  }
+
+  zeroStarLeft(): string {
+    if (this.rtl) {
+      const width = this.starSize()['width'];
+      return `calc(${width} * ${this.maxStars})`;
+    }
+    return '-16px';
   }
 
   private safeSize = () => (Number.isInteger(this.size) && this.size > 0 && this.size < 6) ? this.size : 1;
@@ -194,7 +208,12 @@ export class NgxStarsComponent implements OnInit, OnDestroy {
 
   private clickedInFirstHalf(event: MouseEvent): boolean {
     const starIcon = event.target as HTMLElement;
-    return event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
+    if (this.rtl) {
+      return event.pageX > starIcon.getBoundingClientRect().right - starIcon.offsetWidth / 2;
+    }
+    else {
+      return event.pageX < starIcon.getBoundingClientRect().left + starIcon.offsetWidth / 2;
+    }
   }
 
   noop(): void {}
